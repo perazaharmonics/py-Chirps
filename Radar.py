@@ -66,9 +66,10 @@ class Radar:
         
         # Generate BPSK data
         data = np.random.choice([0, 1], size=(len(t),))
-        
+        """TODO: Use pure single tones with symmetric freq-spacing and
+         decreasing amplitudes. Center the major tone at the center frequency."""
         # Modulate the major tone
-        major_tone = bpsk_modulated_tone(t, major_tone_frequency, data)
+        # major_tone = bpsk_modulated_tone(t, major_tone_frequency, data)
         
         # Modulate the minor tones
         minor_tones = sum(bpsk_modulated_tone(t, freq, data) for freq in minor_tone_frequencies)
